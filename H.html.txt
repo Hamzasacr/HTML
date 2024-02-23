@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/all.min.css">
+    
+    
+    <style>
+        input:first-child,
+        div{
+            width: 100px;
+            height: 100px;
+            display: block;
+            position: relative;
+            border: 1px solid #555;
+            border-radius: 5px;
+        }
+        div{
+            margin-left: 5px;
+            width: 98px;
+            display: none;
+        }
+        input:first-child:checked + div{
+            display: block;
+        }
+
+        input:first-child::after,
+        div::after{
+            content: "Click me";
+            position: absolute;
+            width: max-content;
+            display: inline-block;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 20px;
+            font-weight: bold;
+        }
+        input:first-child:checked{
+            display: none;
+        }
+
+        input:checked ~ p::before{
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            content: "\f185";
+            width: 20px;
+           display:inline-block;
+            
+        }
+        input:checked ~ p::after,
+        p::after{
+            content: "sun";
+            
+        }
+
+        p:after{
+            content: "moon";
+        }
+
+        p:before{
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            content: "\f186";
+            display:inline-block;
+            width: 20px;
+            
+        }
+        
+    </style>
+</head>
+<body>
+    <input type="checkbox" name="" id="">
+    <div></div>
+    <p></p>
+    <input  type="checkbox" name="" id="">
+    <input class="text" type="text">
+
+</body>
+</html>
